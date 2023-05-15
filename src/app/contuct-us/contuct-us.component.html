@@ -1,0 +1,54 @@
+
+  
+
+  <div class="container" style="overflow: hidden;">
+    <div class="row mt-5 ">
+      <div class="col-sm-6 img-fluid">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#1F8CED" d="M46.8,-61.1C57.1,-47.1,59.3,-29,59.4,-12.8C59.6,3.4,57.5,17.7,52.4,33.7C47.3,49.7,39.2,67.4,25.9,73.1C12.7,78.7,-5.7,72.3,-22.2,64.7C-38.8,57.1,-53.6,48.3,-65.9,34.4C-78.3,20.5,-88.3,1.6,-84.1,-13.6C-80,-28.8,-61.7,-40.3,-45.3,-53.2C-29,-66.1,-14.5,-80.4,1.9,-82.7C18.3,-84.9,36.5,-75.1,46.8,-61.1Z" transform="translate(100 100)" />
+          <text x="50%" y="50%" fill="#fff" text-anchor="middle" font-size="20" font-weight="bold">Contact Us</text>
+        </svg>
+              
+      </div>
+        <div class="col-sm-6">
+          <form class="form"  [formGroup]="registerForm"   (ngSubmit)="registerForm.status!='INVALID'">
+          <div class="card mt-5 login">
+            <b>Name*</b>
+            <br>
+              <div class="group">
+              <input  type="text"  formControlName="Name"
+              [ngClass]="{error: getControl('Name')?.errors && getControl('Name')?.touched}">
+              <label for="Name"><div *ngIf="registerForm.controls['Name'].invalid && (registerForm.controls['Name'].dirty || registerForm.controls['Name'].touched)">
+                <div *ngIf="registerForm.controls['Name'].errors?.['required']" style="color: rgb(237, 81, 81);">Name is required</div>
+              </div></label>
+             
+              </div>
+              <b>Email*</b>
+              <br>
+          <div class="group">
+           
+              <input type="email" id="email" name="email" formControlName="email" [ngClass]="{error: getControl('email')?.errors && getControl('email')?.touched}">
+              <label for="email"> <div *ngIf="registerForm.controls.email.touched && registerForm.controls.email.errors">
+                <span *ngIf="registerForm.controls.email.errors?.['required']" style="color: rgb(237, 81, 81);">Enter Mail ID</span>
+              </div></label>
+             
+              </div>
+              <b>Comment*</b>
+            <br>
+          <div class="group">
+            
+              <textarea id="comment" name="comment" rows="5" formControlName="comment" ></textarea>
+              <label for="comment"> <div *ngIf="registerForm.controls.comment.touched && registerForm.controls.comment">
+                <span *ngIf="registerForm.controls.comment.errors?.['required']" style="color: rgb(237, 81, 81);">Comments Required</span>
+              </div></label>
+             
+             
+          </div>
+          <button type="submit"  (click)="onSubmit()" [disabled]="registerForm.status==='INVALID'"  [ngClass]="{ 'valid': isFormValid}">Submit</button>
+          </div>
+            </form>
+          </div>
+    </div>        
+        </div>
+    
+   

@@ -1,0 +1,30 @@
+.footer.sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+ .col-sm-12{
+  background-color: #0a32ac;
+  background-size: cover;
+ } 
+
+ a{
+  border-radius: 5px;
+  position: relative;
+  margin-right: 70%;
+  color:#000000;
+  padding: 8px 2px ;
+  justify-content: flex-start;
+  text-decoration: none;
+ }
+
+ a:hover{
+     background-color: #ed1f1f;
+     transition: 0.3s;
+ }
+
+ 
+
+

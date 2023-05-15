@@ -1,0 +1,178 @@
+
+text{
+  animation: fadeInRight;
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation-duration: 3s; 
+}
+
+
+@media only screen and (max-width:767px) {
+  svg{
+    width: 100%;
+    height: auto;
+  }
+  .form .input-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.input-container {
+  position: relative;
+  margin: 50px auto;
+  width: 200px;
+}
+
+.input-container input[type="text"] {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  transition: all .3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus+ label, .form .group textarea:focus +label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 100px;
+}
+
+ button {
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error{
+  border: 1px solid red;
+}
+
+button:disabled {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+.form button {
+  text-align: center;
+}
+
+.form button:disabled::after {
+  content: "*The button is disabled until valid input";
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+
+.form button:valid::before{
+  content: "We are Exited to Know About You";
+  color: green;
+  font-size: 12px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+// button.valid{
+//   background-color: green;
+//   color: white;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 10px;
+//   font-size: 16px;
+// }
